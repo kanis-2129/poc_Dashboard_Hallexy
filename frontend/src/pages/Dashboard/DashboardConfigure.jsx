@@ -84,7 +84,6 @@ export default function DashboardEmptyGridUI() {
     );
   };
 
-  // ✅ Fix missing row/col on initial load
   React.useEffect(() => {
     setWidgets((prev) =>
       prev.map((w) => {
@@ -182,7 +181,7 @@ export default function DashboardEmptyGridUI() {
       const position = findNextFreePosition(widgets, width, height);
 
       const row = position.row ?? 0;
-      let col = position.col ?? 0; // ✅ let (important)
+      let col = position.col ?? 0; 
 
       // clamp inside grid
       col = Math.min(col, 12 - width);
@@ -394,10 +393,8 @@ export default function DashboardEmptyGridUI() {
                       enableUserSelectHack={false}
                       enableResizing={false}
                       onDragStop={(e, data) => {
-                        const widgetPxWidth = w.width * cellSize - GRID_GAP; // account for gap
+                        const widgetPxWidth = w.width * cellSize - GRID_GAP;
                         const maxGridPx = 12 * cellSize - GRID_GAP;
-
-                        // clamp x so widget doesn't exceed grid
                         const clampedX = Math.min(
                           Math.max(0, data.x),
                           maxGridPx - widgetPxWidth
@@ -431,8 +428,8 @@ export default function DashboardEmptyGridUI() {
                                 className="text-red-400 cursor-pointer"
                                 size={16}
                                 onClick={() => {
-                                  setWidgetToDelete(w); // store which widget to delete
-                                  setShowDeletePopup(true); // show confirmation popup
+                                  setWidgetToDelete(w); 
+                                  setShowDeletePopup(true); 
                                 }}
                               />
                               <HiOutlineCog
@@ -483,21 +480,21 @@ export default function DashboardEmptyGridUI() {
                           {w.type === "PIE" && (
                             <PieChartWidget
                               widget={w}
-                              orders={ordersWithDuration} // ✅ must pass this, not context orders
+                              orders={ordersWithDuration} 
                             />
                           )}
 
                           {w.type === "TABLE" && (
                             <TableChartWidget
                               widget={w}
-                              data={ordersWithDuration} // ✅ correct
+                              data={ordersWithDuration}
                             />
                           )}
 
                           {w.type === "KPI" && (
                             <KPIWidget
                               widget={w}
-                              data={ordersWithDuration} // ✅ correct
+                              data={ordersWithDuration}
                             />
                           )}
                         </div>
@@ -593,3 +590,4 @@ export default function DashboardEmptyGridUI() {
     </>
   );
 }
+
