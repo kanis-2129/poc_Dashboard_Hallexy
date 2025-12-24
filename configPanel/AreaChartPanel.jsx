@@ -18,7 +18,7 @@ export default function WidgetConfigPanel({ isOpen, widget, onClose, onSave }) {
     setHeight(widget.height ?? 5);
     setDescription(widget.description || "");
 
-    // ✅ IMPORTANT FIX
+    // IMPORTANT FIX
     setX_axis(widget.xAxisField ?? "");
     setY_axis(widget.yAxisField ?? "");
 
@@ -180,3 +180,4 @@ export default function WidgetConfigPanel({ isOpen, widget, onClose, onSave }) {
     </div>
   );
 }
+
