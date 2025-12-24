@@ -28,7 +28,7 @@ export default function ScatterPlotWidget({ widget, orders }) {
     unitPrice: "unitPrice",
     quantity: "quantity",
     createdBy: "createdBy",
-    duration: "duration", // virtual, derived from createdAt
+    duration: "duration", 
   };
 
   const isNumber = (val) => !isNaN(Number(val));
@@ -141,3 +141,4 @@ export default function ScatterPlotWidget({ widget, orders }) {
     </div>
   );
 }
+
