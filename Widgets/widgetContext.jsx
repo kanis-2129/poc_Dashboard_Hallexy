@@ -21,16 +21,16 @@ export const WidgetProvider = ({ children }) => {
       try {
         const res = await axios.get("http://localhost:5001/api/orders");
 
-        console.log("🟢 API ORDERS:", res.data);
+        console.log("API ORDERS:", res.data);
 
         setOrders(res.data);
 
         
         localStorage.setItem("dashboard_orders", JSON.stringify(res.data));
       } catch (err) {
-        console.error("🔴 API failed, loading from localStorage");
+        console.error(" API failed, loading from localStorage");
 
-        // 🧯 fallback
+        // fallback
         const cached = JSON.parse(
           localStorage.getItem("dashboard_orders") || "[]"
         );
@@ -58,3 +58,4 @@ export const WidgetProvider = ({ children }) => {
 };
 
 export const useWidgetContext = () => useContext(WidgetContext);
+
