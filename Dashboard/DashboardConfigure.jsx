@@ -83,8 +83,6 @@ export default function DashboardEmptyGridUI() {
       prevWidgets.map((w) => (w.id === updatedWidget.id ? updatedWidget : w))
     );
   };
-
-  // ✅ Fix missing row/col on initial load
   React.useEffect(() => {
     setWidgets((prev) =>
       prev.map((w) => {
@@ -182,7 +180,7 @@ export default function DashboardEmptyGridUI() {
       const position = findNextFreePosition(widgets, width, height);
 
       const row = position.row ?? 0;
-      let col = position.col ?? 0; // ✅ let (important)
+      let col = position.col ?? 0; 
 
       // clamp inside grid
       col = Math.min(col, 12 - width);
@@ -483,21 +481,21 @@ export default function DashboardEmptyGridUI() {
                           {w.type === "PIE" && (
                             <PieChartWidget
                               widget={w}
-                              orders={ordersWithDuration} // ✅ must pass this, not context orders
+                              orders={ordersWithDuration} 
                             />
                           )}
 
                           {w.type === "TABLE" && (
                             <TableChartWidget
                               widget={w}
-                              data={ordersWithDuration} // ✅ correct
+                              data={ordersWithDuration} 
                             />
                           )}
 
                           {w.type === "KPI" && (
                             <KPIWidget
                               widget={w}
-                              data={ordersWithDuration} // ✅ correct
+                              data={ordersWithDuration} 
                             />
                           )}
                         </div>
@@ -593,3 +591,4 @@ export default function DashboardEmptyGridUI() {
     </>
   );
 }
+
