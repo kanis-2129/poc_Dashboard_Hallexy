@@ -2,24 +2,24 @@ import { Filler } from "chart.js";
 import { Line } from "react-chartjs-2";
 import React, { useMemo } from "react";
 import { useWidgetContext } from "../Widgets/widgetContext";
-// Use the Line chart component for area chart
+
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  LineElement, // Use LineElement for area charts
-  PointElement, // Register PointElement for the points on the line (optional)
+  LineElement, 
+  PointElement,
   Title,
   Tooltip,
   Legend,
 } from "chart.js";
 
-// Register the necessary elements
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  LineElement, // Register LineElement for the line
-  PointElement, // Register PointElement for the points on the line (optional)
+  LineElement, 
+  PointElement, 
   Title,
   Filler,
   Tooltip,
@@ -36,7 +36,7 @@ export default function AreaChartWidget({ widget, orders }) {
     unitPrice: "unitPrice",
     quantity: "quantity",
     createdBy: "createdBy",
-    duration: "duration", // virtual, derived from createdAt
+    duration: "duration", 
   };
 
   const monthNames = [
@@ -141,7 +141,7 @@ export default function AreaChartWidget({ widget, orders }) {
     maintainAspectRatio: false,
     layout: {
       padding: {
-        bottom: 25, // 🔥 gives space for Month label
+        bottom: 25, 
         left: 10,
         right: 10,
         top: 10,
@@ -175,7 +175,7 @@ export default function AreaChartWidget({ widget, orders }) {
             size: 14,
             weight: "400",
           },
-          maxTicksLimit: 5, // 👈 y-1 to y-5 feel
+          maxTicksLimit: 5, 
           callback: (value, index) => (index === 0 ? "0" : `y-${index}`),
         },
         title: {
@@ -192,3 +192,4 @@ export default function AreaChartWidget({ widget, orders }) {
     </div>
   );
 }
+
