@@ -17,7 +17,7 @@ export default function TableWidget({ widget, data = [] }) {
     setPage(1);
   }, [pagination, sortBy, applyFilter, filter, columns]);
 
-  // 🔹 Apply filter
+  //  Apply filter
   const filteredData = useMemo(() => {
     if (!applyFilter || !filter || !filter.attribute || !filter.value)
       return data;
@@ -49,7 +49,7 @@ export default function TableWidget({ widget, data = [] }) {
     });
   }, [data, applyFilter, filter]);
 
-  // 🔹 Sorting
+  //Sorting
   const sortedData = useMemo(() => {
     if (!columns.length) return filteredData;
 
@@ -71,7 +71,7 @@ export default function TableWidget({ widget, data = [] }) {
       ? Number(pagination)
       : sortedData.length;
 
-  // 🔹 Pagination
+  // Pagination
   const paginatedData = useMemo(() => {
     const start = (page - 1) * pageSize;
     return sortedData.slice(start, start + pageSize);
@@ -133,3 +133,4 @@ export default function TableWidget({ widget, data = [] }) {
     </div>
   );
 }
+
