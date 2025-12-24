@@ -28,7 +28,7 @@ export default function LineChartWidget({ widget, orders }) {
     unitPrice: "unitPrice",
     quantity: "quantity",
     createdBy: "createdBy",
-    duration: "duration", // virtual, derived from createdAt
+    duration: "duration", 
   };
 
   const monthNames = [
@@ -133,7 +133,7 @@ export default function LineChartWidget({ widget, orders }) {
     maintainAspectRatio: false,
     layout: {
       padding: {
-        bottom: 25, // 🔥 gives space for Month label
+        bottom: 25, 
         left: 10,
         right: 10,
         top: 10,
@@ -167,7 +167,7 @@ export default function LineChartWidget({ widget, orders }) {
             size: 14,
             weight: "400",
           },
-          maxTicksLimit: 5, // 👈 y-1 to y-5 feel
+          maxTicksLimit: 5, 
           callback: (value, index) => (index === 0 ? "0" : `y-${index}`),
         },
         title: {
@@ -184,3 +184,4 @@ export default function LineChartWidget({ widget, orders }) {
     </div>
   );
 }
+
