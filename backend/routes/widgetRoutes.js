@@ -7,15 +7,15 @@ const router = express.Router();
 // CREATE
 router.post("/", async (req, res) => {
   try {
-    console.log("📥 POST widget payload:", req.body);
+    console.log(" POST widget payload:", req.body);
 
     const widget = new Widget(req.body);
     await widget.save();
 
-    console.log("✅ SAVED widget ID:", widget._id);
+    console.log("SAVED widget ID:", widget._id);
     res.json(widget);
   } catch (err) {
-    console.error("❌ WIDGET SAVE ERROR:", err);
+    console.error(" WIDGET SAVE ERROR:", err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -42,3 +42,4 @@ router.delete("/:id", async (req, res) => {
 });
 
 export default router;
+
