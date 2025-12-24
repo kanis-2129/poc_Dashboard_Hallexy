@@ -37,7 +37,7 @@ const CustomerOrderList = ({ orders, openModal, handleDelete }) => {
         </button>
       </div>
 
-      {/* ✅ Horizontal scroll wrapper */}
+      {/*Horizontal scroll wrapper */}
       <div className="border rounded-lg shadow-sm bg-white">
         <div className="overflow-x-auto overflow-y-visible">
           <table className="min-w-max border-collapse">
@@ -112,7 +112,7 @@ const CustomerOrderList = ({ orders, openModal, handleDelete }) => {
                     {/* Created by */}
                     <td className="border px-3 py-2">{order.createdBy}</td>
 
-                    {/* ✅ Actions column */}
+                    {/*Actions column */}
                     <td className="border px-3 py-2 text-center relative bg-white sticky right-0 z-10">
                       <button
                         onClick={() =>
@@ -159,3 +159,4 @@ const CustomerOrderList = ({ orders, openModal, handleDelete }) => {
 };
 
 export default CustomerOrderList;
+
