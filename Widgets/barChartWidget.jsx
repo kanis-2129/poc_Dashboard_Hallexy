@@ -19,7 +19,7 @@ export default function BarChartWidget({ widget }) {
   console.log("FINAL | BAR CHART WIDGET:", widget);
   console.log("FINAL | BAR CHART ORDERS:", orders);
   console.log(
-    "🟡 STATUS VALUES:",
+    "STATUS VALUES:",
     orders?.map((o) => o.status)
   );
 
@@ -120,10 +120,10 @@ export default function BarChartWidget({ widget }) {
         grid: { display: false },
         ticks: {
           font: {
-            size: 14, // 👈 y-axis numbers size
+            size: 14, 
             weight: "400",
           },
-          maxTicksLimit: 5, // 👈 y-1 to y-5 feel
+          maxTicksLimit: 5, 
           callback: (value, index) => (index === 0 ? "0" : `y-${index}`),
         },
         title: {
@@ -148,3 +148,4 @@ export default function BarChartWidget({ widget }) {
     </div>
   );
 }
+
