@@ -11,7 +11,7 @@ const fieldMap = {
 export default function KPIWidget({ widget, data = [] }) {
   const dataKey = fieldMap[widget.metric]; // declare first
 
-  console.log("✅ KPIWidget RENDERED", {
+  console.log("KPIWidget RENDERED", {
     metric: widget.metric,
     dataKey,
     sampleRow: data[0],
@@ -65,3 +65,4 @@ export default function KPIWidget({ widget, data = [] }) {
     </div>
   );
 }
+
