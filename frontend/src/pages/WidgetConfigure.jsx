@@ -61,7 +61,7 @@ const WidgetConfigure = () => {
     navigate("/dashboard-configure");
   };
 
-  // 👉 Clean SidebarItem Component
+ 
   const SidebarItem = ({ name, icon, onClick }) => (
     <button
       onClick={onClick}
@@ -132,7 +132,7 @@ const WidgetConfigure = () => {
                   name="Bar Chart"
                   icon={<BarChart2 size={18} />}
                   onClick={() => {
-                    setSelectedWidget("barChart"); // <-- mark Bar Chart as selected
+                    setSelectedWidget("barChart"); 
                     setIsConfigOpen(true);
                   }}
                 />
@@ -141,7 +141,7 @@ const WidgetConfigure = () => {
                   name="Line Chart"
                   icon={<LineChart size={18} />}
                   onClick={() => {
-                    setSelectedWidget("lineChart"); // <-- mark Bar Chart as selected
+                    setSelectedWidget("lineChart"); 
                     setIsConfigOpen(true);
                   }}
                 />
@@ -149,7 +149,7 @@ const WidgetConfigure = () => {
                   name="Pie Chart"
                   icon={<PieChart size={18} />}
                   onClick={() => {
-                    setSelectedWidget("pieChart"); // <-- mark Bar Chart as selected
+                    setSelectedWidget("pieChart");
                     setIsConfigOpen(true);
                   }}
                 />
@@ -157,7 +157,7 @@ const WidgetConfigure = () => {
                   name="Area Chart"
                   icon={<BarChart2 size={18} />}
                   onClick={() => {
-                    setSelectedWidget("AreaChart"); // <-- mark Bar Chart as selected
+                    setSelectedWidget("AreaChart");
                     setIsConfigOpen(true);
                   }}
                 />
@@ -165,7 +165,7 @@ const WidgetConfigure = () => {
                   name="Scatter Plot"
                   icon={<Activity size={18} />}
                   onClick={() => {
-                    setSelectedWidget("scatteredChart"); // <-- mark Bar Chart as selected
+                    setSelectedWidget("scatteredChart"); 
                     setIsConfigOpen(true);
                   }}
                 />
@@ -380,3 +380,4 @@ const WidgetConfigure = () => {
 };
 
 export default WidgetConfigure;
+
