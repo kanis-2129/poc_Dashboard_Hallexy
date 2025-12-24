@@ -88,7 +88,7 @@ const Home = () => {
   bg-white border rounded-md shadow p-4
   ${
     isDesktop
-      ? "col-span-3" // 4 KPI cards → perfect row
+      ? "col-span-3" 
       : isTablet
       ? "col-span-3"
       : "col-span-1"
@@ -159,3 +159,4 @@ const Home = () => {
 };
 
 export default Home;
+
