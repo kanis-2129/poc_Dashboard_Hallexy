@@ -28,7 +28,7 @@ export default function WidgetConfigPanel({ isOpen, widget, onClose, onSave }) {
     setHeight(widget.height ?? 1);
     setDescription(widget.description || "");
 
-   
+    // ✅ PIE CORRECT FIELD (NO LOGIC CHANGE)
     setSelectedField(widget.pieField ?? "");
     setShowLegend(widget.showLegend ?? true);
   }, [widget]);
@@ -51,7 +51,7 @@ export default function WidgetConfigPanel({ isOpen, widget, onClose, onSave }) {
 
     const updatedWidget = {
       ...widget,
-      type: "PIE", 
+      type: "PIE", // ✅ FORCE CORRECT TYPE
       title,
       width,
       height,
@@ -167,4 +167,3 @@ export default function WidgetConfigPanel({ isOpen, widget, onClose, onSave }) {
     </div>
   );
 }
-

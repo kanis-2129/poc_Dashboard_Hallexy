@@ -50,7 +50,7 @@ export default function WidgetConfigPanel({ isOpen, widget, onClose, onSave }) {
 
     onSave({
       ...widget,
-      type: "KPI", 
+      type: "KPI", // 🔥 MUST
       title,
       width,
       height,
@@ -234,4 +234,3 @@ export default function WidgetConfigPanel({ isOpen, widget, onClose, onSave }) {
     </div>
   );
 }
-

@@ -13,6 +13,8 @@ export default function TablePanel({ isOpen, widget, onClose, onSave }) {
   const [sortBy, setSortBy] = useState("asc");
   const [pagination, setPagination] = useState("");
   const [applyFilter, setApplyFilter] = useState(false);
+
+  // 🔥 Filter states
   const [attribute, setAttribute] = useState("");
   const [operator, setOperator] = useState("=");
   const [filterValue, setFilterValue] = useState("");
@@ -45,7 +47,7 @@ export default function TablePanel({ isOpen, widget, onClose, onSave }) {
       setPagination(widget.pagination || "");
       setApplyFilter(widget.applyFilter || false);
 
-     
+      // ✅ ADD THESE
       setFontSize(widget.fontSize ?? 14);
       setHeaderBg(widget.headerBg ?? "#D8D8D8");
 
@@ -278,7 +280,7 @@ export default function TablePanel({ isOpen, widget, onClose, onSave }) {
 
         {activeTab === "styling" && (
           <div className="px-5 py-4">
-          
+            {/* 👉 ONLY styling related inputs */}
 
             <label className="text-sm font-medium">
               Font size <span className="text-red-500">*</span>
@@ -328,12 +330,12 @@ export default function TablePanel({ isOpen, widget, onClose, onSave }) {
               pagination,
               applyFilter,
 
-             
+              // ✅ FILTER FIX
               filter: applyFilter
                 ? { attribute, operator, value: filterValue }
                 : null,
 
-             
+              // ✅ STYLING FIX (THIS WAS MISSING)
               fontSize,
               headerBg,
             });
@@ -348,4 +350,3 @@ export default function TablePanel({ isOpen, widget, onClose, onSave }) {
     </div>
   );
 }
-
