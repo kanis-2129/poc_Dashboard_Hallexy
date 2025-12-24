@@ -7,7 +7,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function PieChartWidget({ widget }) {
-  console.log("🔥 PIE CHART FILE LOADED 🔥");
+  console.log("PIE CHART FILE LOADED");
 
   const { orders } = useWidgetContext();
 
@@ -81,7 +81,7 @@ export default function PieChartWidget({ widget }) {
   const options = {
     responsive: true,
     maintainAspectRatio: false,
-    radius: "75%", // 👈 chart size kammi
+    radius: "75%", 
     plugins: {
       legend: {
         position: "right",
@@ -89,7 +89,7 @@ export default function PieChartWidget({ widget }) {
           boxWidth: 10,
           padding: 5,
           font: {
-            size: 11, // legend text also small
+            size: 11, 
           },
         },
       },
@@ -104,3 +104,4 @@ export default function PieChartWidget({ widget }) {
     </div>
   );
 }
+
