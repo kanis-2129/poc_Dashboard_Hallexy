@@ -13,7 +13,7 @@ const CreateOrderEmpty = () => {
   const { orders, setOrders } = useWidgetContext();
 
   useEffect(() => {
-    console.log("🟢 CREATE ORDER | CONTEXT ORDERS UPDATED:", orders);
+    console.log("Create order |context order updates:", orders);
   }, [orders]);
 
   const initialForm = {
@@ -593,3 +593,4 @@ const CreateOrderEmpty = () => {
 };
 
 export default CreateOrderEmpty;
+
